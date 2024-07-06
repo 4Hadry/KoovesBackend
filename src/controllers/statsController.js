@@ -105,8 +105,8 @@ export const getDashboardStats = TryCatch(async (req, res, next) => {
       User.countDocuments(),
       lastSixMonthOrdersPromise,
       Product.distinct("category"),
-      User.countDocuments({ role: "seller" }),
-      User.countDocuments({ role: "buyer" }),
+      User.countDocuments({ role: "admin" }),
+      User.countDocuments({ role: "user" }),
       latestTransactionsPromise,
     ]);
 

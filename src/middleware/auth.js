@@ -34,20 +34,3 @@ export const protect = TryCatch(async (req, res, next) => {
     next(new ErrorHandler("Not authorized, no token", 401));
   }
 });
-
-// const admin = (req, res, next) => {
-//   if (req.user && req.user.role === 'admin') {
-//     next();
-//   } else {
-//     res.status(401);
-//     throw new Error('Not authorized as an admin');
-//   }
-// };
-
-export const seller = (req, res, next) => {
-  if (req.user && req.user.role === "seller") {
-    next();
-  } else {
-    next(new ErrorHandler("Not authorized as a seller", 401));
-  }
-};

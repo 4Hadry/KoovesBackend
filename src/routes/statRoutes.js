@@ -1,6 +1,5 @@
 import express from "express";
 
-// import { isAdmin } from "../middleware/auth.js";
 import {
   getBarCharts,
   getDashboardStats,

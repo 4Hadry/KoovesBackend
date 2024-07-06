@@ -1,4 +1,3 @@
-// import Stripe from "stripe";
 import { stripe } from "../index.js";
 import { TryCatch } from "../middleware/error.js";
 

@@ -1,6 +1,6 @@
 import express from "express";
 
-import { isAdmin, protect, seller } from "../middleware/auth.js";
+import { isAdmin, protect } from "../middleware/auth.js";
 import {
   createProduct,
   deleteProduct,
