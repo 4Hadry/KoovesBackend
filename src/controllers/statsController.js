@@ -221,6 +221,7 @@ export const getPieCharts = TryCatch(async (req, res, next) => {
       User.countDocuments({ role: "buyer" }),
       User.countDocuments({ role: "seller" }),
     ]);
+
     const orderFulfillment = {
       processing: ProccessingOrder,
       shipped: ShippedOrder,
