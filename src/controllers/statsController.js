@@ -209,7 +209,7 @@ export const getPieCharts = TryCatch(async (req, res, next) => {
       outOfStock,
       adminUsers,
       customers,
-      seller,
+      // seller,
     ] = await Promise.all([
       Order.countDocuments({ status: "Processing" }),
       Order.countDocuments({ status: "Shipped" }),
@@ -218,8 +218,8 @@ export const getPieCharts = TryCatch(async (req, res, next) => {
       Product.countDocuments(),
       Product.countDocuments({ stock: 0 }),
       User.countDocuments({ role: "admin" }),
-      User.countDocuments({ role: "buyer" }),
-      User.countDocuments({ role: "seller" }),
+      User.countDocuments({ role: "user" }),
+      // User.countDocuments({ role: "seller" }),
     ]);
 
     const orderFulfillment = {
@@ -240,7 +240,7 @@ export const getPieCharts = TryCatch(async (req, res, next) => {
     const users = {
       admin: adminUsers,
       customer: customers,
-      seller: seller,
+      // seller: seller,
     };
 
     charts = {
